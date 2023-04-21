@@ -4,42 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- add API link tag(s) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.googlemap/1.5.1/jquery.googlemap.min.js" integrity="sha512-mTxKPggCYbMylBEGHSZqkUvemhyjRIshmudjw6fiAxjVbKMZUqqVH/ugpvnQgOU4c4C2UhrWpOXkBeXFQfr9kA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- insert script tag -->
+    <script src="index.js"></script>
     <title>Geolocation Project</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
-    <script src="app.js" defer></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
     <style>
-    #map { 
-        height: 400px;
-        background-color: #ccc;
-    }
-    #map::before{
-        content: 'LOADING';
-        font-size: 3em;
-        text-align: center;
-        width: 100%;
-        position: absolute;
-        margin-top: 3em;
-    }
-    .leaflet-popup-content-wrapper {
-        width: 100%;
-    }
-  </style>
+        #map {
+            height: 400px;
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
+    <!-- create dropdown menu with options (coffee, restaurant, hotel, market)-->
     <form>
-        <select id="business">
-            <option value="restaurant">Restaurants</option>
+        <label for="options">Choose an option:</label>
+        <select name="options" id="options">
             <option value="coffee">Coffee Shops</option>
+            <option value="restaurant">Restaurants</option>
             <option value="hotel">Hotels</option>
             <option value="market">Markets</option>
         </select>
-        <button id="submit">Submit</button>
-    </form>
-    <div id="map"></div>
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+    <!-- create a space where you will place the map -->
+    <div id=container>
+        <div id=map>
+            The map goes here.
+        </div>
+    </div>
+
 </body>
 </html>
